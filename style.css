@@ -11,22 +11,63 @@ body{
     width: 100%;
     height: 50px;
     position: fixed;
-    text-align: right;
-    background-color: silver;
-    box-shadow: 0 4px 10px 2px grey;
     top: 0;
     left: 0;
+    background-color: silver;
+    box-shadow: 0 4px 10px 2px grey;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
-#navbar p{
-    margin-right: 50px;
-    line-height: 50px;
+#navbar>div:nth-of-type(1){
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    margin-left: 10px;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    transition-duration: 10s;
+}
+#navbar>div:nth-of-type(1):hover{
+    transform: rotate(9000deg);
+}
+#navbar>div:nth-of-type(1)>div{
+    width: 32px;
+    height: 8px;
+    background: black;
+}
+#navbar>div:nth-of-type(2){
+    margin-right: 3%;
+    width: 90px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    border-radius: 18px;
+    background-color: aqua;
+}
+#navbar>div:nth-of-type(2)>div{
+    cursor: pointer;
+    width: calc(100%/3); /* 30px */
+    height: calc(500%/6); /* 30px */
+    margin-left: calc(100%/15); /* 6px */
+    padding: 0;
+    border-radius: 50%;
+    background-color: white;
+}
+#navbar>div:nth-of-type(3){
+    width: 40px;
+    height: 40px;
+    margin-right: 8%;
+    border-radius: 20px;
+    background-image: url("src/puz7.gif");
 }
 #header{
     height: 200px;
-    margin: 80px auto 30px;
+    margin: 80px auto 20px;
     text-align: center;
     font-size: 20px;
-
 }
 #header input{
     all: unset;
@@ -41,21 +82,16 @@ body{
 #header input::placeholder{
     color: blue;
 }
-#container ul{
-    font-size: 0;
-    overflow: hidden;
-    width: 80%;
-    margin: 0 auto;
-    list-style: none;
+#container ul{ 
+    font-size: 0; /* to make defalut margins zero in list */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 #container ul li{
-    width: calc(100% / 3 - 10px);
-    height: 40vw;
-    margin: 5px;
-    float: left;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    box-shadow: 0 5px 5px gray;
+    width: 300px;
+    height: 480px;
+    margin: 10px;
 }
 #container ul li:hover{
     transform: scale(1.2);
@@ -66,53 +102,35 @@ body{
     height: 90%;
 }
 #container ul li p{
-    font-size: 2.5vw;
-    line-height: 4vw;
+    font-size: 35px;
+    line-height: 48px;
     text-align: center;
     color: white;
     background-color: brown;
 }
 @media (max-width:1023px) {
-    #container ul li{
-        width: calc(100% / 3 - 10px);
-        height: 40vw;
-    }
-    #container ul li p{
-        font-size: 2.5vw;
-        line-height: 4vw;
-    }
 }
 @media (max-width:767px) {
     #header{
         font-size: 18px;
         margin: 70px auto 0;
     }
-    #container ul{
-        width: 100%;
-    }
-    #container ul li{
-        width: calc(100% / 3 - 10px);
-        height: 50vw;
-    }
-    #container ul li p{
-        font-size: 3vw;
-        line-height: 5vw;
-    }
 }
 @media (max-width:479px) {
     #navbar{
         height: 40px;
     }
+    #navbar div:nth-of-type(2){
+        width: 60px;
+        height: 28.8px;
+        border-radius: 14.4px;
+    }
+    #navbar div:nth-of-type(3){
+        width: 32px;
+        height: 32px;
+    }
     #header{
         height: 170px;
         font-size: 16px;
-    }
-    #container ul li{
-        width: calc(100% / 2 - 10px);
-        height: 80vw;
-    }
-    #container ul li p{
-        font-size: 5vw;
-        line-height: 8vw;
     }
 }
