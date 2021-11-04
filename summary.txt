@@ -22,3 +22,21 @@ git push $repo-url-nickname$ $branch-name$
   * when you once login github, git automatically save the data with credential
   * you could see saved data with command `git credential fill` and `url=https://github.com`
   * you could remove saved data in window credential
+
+additional setting on json
+
+    "terminal.integrated.fontFamily": "Consolas, 'Courier New', monospace",
+    // scss setting
+    "liveSassCompile.settings.formats": [
+        // This is Default.
+        {
+            "format": "expanded",
+            "extensionName": ".css",
+            "savePath": "/photo-gallery/"
+        }
+    ],
+    "liveSassCompile.settings.generateMap": false,
+    "liveSassCompile.settings.includeItems": [
+        "/photo-gallery/test.scss"
+    ],
+}
