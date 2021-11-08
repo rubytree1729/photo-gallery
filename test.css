@@ -7,6 +7,7 @@ body {
   min-width: 320px;
   max-width: 1440px;
   margin: 0 auto;
+  text-align: center;
 }
 
 #navbar {
@@ -75,11 +76,11 @@ body {
 
 #navbar > div:nth-of-type(2) > div {
   cursor: pointer;
-  width: calc(100%/3);
+  width: calc(100% / 3);
   /* 30px */
-  height: calc(500%/6);
+  height: calc(500% / 6);
   /* 30px */
-  margin-left: calc(100%/15);
+  margin-left: calc(100% / 15);
   /* 6px */
   padding: 0;
   border-radius: 50%;
@@ -98,7 +99,6 @@ body {
 #header {
   height: 200px;
   margin: 80px auto 20px;
-  text-align: center;
   font-size: 20px;
 }
 
@@ -162,9 +162,71 @@ body {
 #container > ul > li > p {
   font-size: 35px;
   line-height: 48px;
-  text-align: center;
   color: white;
   background-color: brown;
+}
+
+#modal {
+  max-height: 70%;
+  padding: 10px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: gray;
+}
+
+#modal > #modheader {
+  height: 80px;
+  line-height: 80px;
+  background: green;
+}
+
+#modal > #modbody {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  margin: 10px 0;
+  background: yellow;
+  overflow: auto;
+}
+
+#modal > #modbody > p {
+  margin: 10px;
+  font-size: 20px;
+  background: yellowgreen;
+}
+
+#modal > #modfooter {
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: red;
+}
+
+#modal > #modfooter > div {
+  height: 40px;
+  line-height: 40px;
+  width: 50px;
+  margin: 5px;
+  background: cadetblue;
+  border-radius: 25%;
 }
 
 @media (max-width: 767px) {
@@ -190,5 +252,11 @@ body {
   #header {
     height: 170px;
     font-size: 16px;
+  }
+  #modal {
+    width: 80%;
+  }
+  #modal > #modbody > p {
+    font-size: 15px;
   }
 }
