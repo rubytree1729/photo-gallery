@@ -11,9 +11,8 @@
     * `git remote add $repo-url-nickname$ $repo-url$`
 
 2. main use
-    * `git add $file-name$` + `git commit -m "$commit-contents$"`
-    * or just `git commit -m "$commit-contents$"` for all file change commit
-    * `git push $repo-url-nickname$ $branch-name$` (check $repo-nickname$ : `git remote -v`)
+    * `git commit -m "$commit-contents$"`  (for more detail commit, `git add $file-name$` + `git commit -m "$commit-contents$"`)
+    * `git push $repo-url-nickname$ $branch-name$`  (check $repo-nickname$ : `git remote -v`)
 
 ## For beginners
 
@@ -31,7 +30,8 @@
     * `git status`
     * `git add $file-name$` (or `git add .` for all)
     * `git status`
-    * `git commit -m "$commit-contents$"` ( -am for file change, -m for file addition)
+    * `git commit -m "$commit-contents$"`
+    * (`git commit -am "$commit-contents$"` = `git add .` + `git commit -m "$commit-contents$"`, -am does add and commit at once)
     * `git log --oneline`(press `q` to quit log)
       * we could see `HEAD -> $branch-name$` and `$repo-url-nickname$/$branch-name$`
       * `$repo-rul-nickname$/$branch-name$` is last log that you pushed to github  
