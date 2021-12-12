@@ -3,25 +3,65 @@
   padding: 0;
 }
 
-.hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-  opacity: 0.8;
+html {
+  cursor: none;
 }
 
 body {
-  cursor: none;
   min-width: 320px;
   max-width: 1440px;
   margin: 0 auto;
   text-align: center;
+  color: black;
+  background-color: white;
 }
 
 .hidden {
-  visibility: hidden;
+  display: none;
+}
+
+.loadingScreen {
+  width: 100%;
+  height: 90%;
+  background-color: black;
+}
+
+.loadingScreen > div {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 30px;
+  color: white;
+}
+
+.loadingScreen > div > div {
+  margin-top: 10%;
+  width: 80%;
+  height: 10%;
+  border: 2px solid white;
+  padding: 5px;
+}
+
+.loadingScreen > div > div > div {
+  width: 100%;
+  height: 100%;
+  background-color: white;
 }
 
 #cursor {
+  pointer-events: none;
   z-index: 1;
   width: 50px;
   height: 50px;
@@ -34,7 +74,6 @@ body {
 }
 
 #navbar {
-  z-index: 2;
   width: 100%;
   height: 50px;
   position: fixed;
@@ -55,7 +94,6 @@ body {
 }
 
 #navbar > div:nth-of-type(1) {
-  cursor: pointer;
   width: 32px;
   height: 32px;
   margin-left: 10px;
@@ -74,6 +112,7 @@ body {
 }
 
 #navbar > div:nth-of-type(1):hover {
+  cursor: pointer;
   -webkit-transform: rotate(9000deg);
           transform: rotate(9000deg);
 }
@@ -81,7 +120,7 @@ body {
 #navbar > div:nth-of-type(1) > div {
   width: 32px;
   height: 8px;
-  background: black;
+  background-color: black;
 }
 
 #navbar > div:nth-of-type(2) {
@@ -99,7 +138,6 @@ body {
 }
 
 #navbar > div:nth-of-type(2) > div {
-  cursor: pointer;
   width: calc(100% / 3);
   /* 30px */
   height: calc(500% / 6);
@@ -111,13 +149,20 @@ body {
   background-color: white;
 }
 
-#navbar > div:nth-of-type(3) {
+#navbar > div:nth-of-type(2) > div:hover {
   cursor: pointer;
+}
+
+#navbar > div:nth-of-type(3) {
   width: 40px;
   height: 40px;
   margin-right: 8%;
   border-radius: 20px;
   background-image: url("src/puz7.gif");
+}
+
+#navbar > div:nth-of-type(3):hover {
+  cursor: pointer;
 }
 
 #header {
@@ -180,7 +225,7 @@ body {
 
 #container > ul > li > img {
   width: 100%;
-  height: 90%;
+  height: 100%;
 }
 
 #container > ul > li > p {
@@ -219,14 +264,14 @@ body {
       -ms-flex-positive: 1;
           flex-grow: 1;
   margin: 10px 0;
-  background: yellow;
+  background-color: yellow;
   overflow: auto;
 }
 
 #modal > #modbody > p {
   margin: 10px;
   font-size: 20px;
-  background: yellowgreen;
+  background-color: yellowgreen;
 }
 
 #modal > #modfooter {
@@ -241,7 +286,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: red;
+  background-color: red;
 }
 
 #modal > #modfooter > div {
@@ -249,8 +294,12 @@ body {
   line-height: 40px;
   width: 50px;
   margin: 5px;
-  background: cadetblue;
+  background-color: cadetblue;
   border-radius: 25%;
+}
+
+#modal > #modfooter > div:hover {
+  cursor: pointer;
 }
 
 @media (max-width: 767px) {
