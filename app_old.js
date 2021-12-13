@@ -1,42 +1,32 @@
 //-- common
 function show(element) {
-    $(element).removeClass("hidden")
-    console.log('show', $(element).attr('class'))
+    element.classList.remove("hidden")
 }
 function hide(element) {
-    $(element).addClass("hidden")
-    console.log('hide', $(element).attr('class'))
+    element.classList.add("hidden")
 }
 function move(element, e) {
-    $(element).css('left', e.clientX + 'px')
-    $(element).css('top', e.clientY + 'px')
+    element.style.left = e.clientX + 'px'
+    element.style.top = e.clientY + 'px'
 }
+
 //-- cursor customize
-// $('*').each((index, item) => { console.log(item).css('cursor') })
-$(document).on({ mouseenter: () => { show($('#cursorDiv')) } }, { mouseleave: () => { hide($('#cursorDiv')) } })
-$(document).mousemove(e => {
-    $('*').each((index, item) => {
-        console.log(item)
-        if (item.css('cursor') != 'none') {
-            hide($('#cursorDiv'))
+const cursorDiv = document.querySelector('#cursor')
+document.addEventListener('mouseenter', () => { show(cursorDiv) })
+document.addEventListener('mouseleave', () => { hide(cursorDiv) })
+document.addEventListener('mousemove', e => {
+    const allElements = document.querySelectorAll('*')
+    for (let cnt in allElements) {
+        if (!isNaN(Number(cnt)) && window.getComputedStyle(allElements[cnt]).cursor != 'none') {
+            // hide custom cursorDiv if there is another cursorDiv defined
+            console.log(window.getComputedStyle(allElements[cnt]).cursor)
+            hide(cursorDiv)
             return
         }
-    })
-    show($('#cursorDiv'))
-    move($('#cursorDiv'), e)
+    }
+    show(cursorDiv)
+    move(cursorDiv, e)
 })
-// , {
-// mousemove: e => {
-//     $('*').each((index, item) => {
-//         if (item.css('cursor') != 'none') {
-//             hide($('#cursorDiv'))
-//             return
-//         }
-//     })
-//     show($('#cursorDiv'))
-//     move($('#cursorDiv'), e)
-// }
-// })
 
 //-- dark-mode
 function convertColor(color) {
