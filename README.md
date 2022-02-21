@@ -11,7 +11,7 @@
     * `git remote add $repo-url-nickname$ $repo-url$`
 
 2. main use
-    * `git commit -m "$commit-contents$"`  (for more detail commit, `git add $file-name$` + `git commit -m "$commit-contents$"`)
+    * `git commit -am "$commit-contents$"`  (for more detail commit, `git add $file-name$` + `git commit -m "$commit-contents$"`)
     * `git push $repo-url-nickname$ $branch-name$`  (check $repo-nickname$ : `git remote -v`)
 
 ## For beginners
